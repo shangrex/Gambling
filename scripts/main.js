@@ -10,41 +10,98 @@ var remain_money = $("#money").text();
 var minus_money = 1000;
 
 var usr_num = Number;
+var now;
 // paper == 2
 // stone == 1
 // scissor == 0
 pic_paper.onclick = function(){
     pc_num = Math.floor(Math.random()*3);
+    now = Date.now();
     usr_num = 2;
     // alert("user"+usr_num);
     // alert("pc"+pc_num);
+    if(pc_num == 0){
+        $("#scissor").attr("src", "images/new_scissors.png");
+    }
+    else if(pc_num == 1){
+        $("#stone").attr("src", "images/new_rock.png");
+    }
+    else if(pc_num == 2){
+        $("#paper").attr("src", "images/new_paper.png");
+    }
+    window.setTimeout(function() {
+        if(pc_num == 0){
+            $("#scissor").attr("src", "images/noun_Scissors_88666.png");
+        }
+        else if(pc_num == 1){
+            $("#stone").attr("src", "images/noun_rock_88661.png");
+        }
+        else if(pc_num == 2){
+            $("#paper").attr("src", "images/noun_Paper_88662.png");
+        }
+    }, 2000);
     judge(pc_num, usr_num);
 }
 pic_stone.onclick = function(){
     pc_num = Math.floor(Math.random()*3);
+    now = Date.now();
     usr_num = 1;
     // alert("user"+usr_num);
     // alert("pc"+pc_num);
-    // if(true){
-    //     $("#paper").css({
-    //         "animation-name":"pc_move", 
-    //         "animation-duration":"2s",
-    //         "animation-delay": "0s",
-    //         "animation-iteration-count": "1"
-    //     })
-    // }
+    if(pc_num == 0){
+        $("#scissor").attr("src", "images/new_scissors.png");
+    }
+    else if(pc_num == 1){
+        $("#stone").attr("src", "images/new_rock.png");
+    }
+    else if(pc_num == 2){
+        $("#paper").attr("src", "images/new_paper.png");
+    }
+    window.setTimeout(function() {
+        if(pc_num == 0){
+            $("#scissor").attr("src", "images/noun_Scissors_88666.png");
+        }
+        else if(pc_num == 1){
+            $("#stone").attr("src", "images/noun_rock_88661.png");
+        }
+        else if(pc_num == 2){
+            $("#paper").attr("src", "images/noun_Paper_88662.png");
+        }
+    }, 1000);
     judge(pc_num, usr_num);
 
 
 }
 pic_scissor.onclick = function(){
     pc_num = Math.floor(Math.random()*3);
+    now = Date.now();
     usr_num = 0;
     // alert("user"+usr_num);
     // alert("pc"+pc_num);
+    if(pc_num == 0){
+        $("#scissor").attr("src", "images/new_scissors.png");
+    }
+    else if(pc_num == 1){
+        $("#stone").attr("src", "images/new_rock.png");
+    }
+    else if(pc_num == 2){
+        $("#paper").attr("src", "images/new_paper.png");
+    }
+    window.setTimeout(function() {
+        if(pc_num == 0){
+            $("#scissor").attr("src", "images/noun_Scissors_88666.png");
+        }
+        else if(pc_num == 1){
+            $("#stone").attr("src", "images/noun_rock_88661.png");
+        }
+        else if(pc_num == 2){
+            $("#paper").attr("src", "images/noun_Paper_88662.png");
+        }
+    }, 1000);
     judge(pc_num, usr_num);
 
 }
+
 
 $("#1000").click(function(){
     minus_money = 1000;
@@ -87,6 +144,9 @@ function judge(pc_num, usr_num){
         num = parseInt(remain_money) - minus_money;
         remain_money = num;
         $('#money').text(num);
+    }
+    if(parseInt(remain_money) < 0){
+        alert("菜雞破產啦~")
     }
     return result;
 };
