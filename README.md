@@ -7,7 +7,7 @@ inspired from 李永樂
 Play paper scissor stone, and pay chips
 
 ## 遊戲畫面
-![](https://i.imgur.com/YYlDQQG.png =300x)
+<img src="https://i.imgur.com/YYlDQQG.png" width=300>
 
 ## Environments
 1. flask
